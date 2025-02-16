@@ -1,3 +1,28 @@
+## Custom Usage
+
+```
+def parse_cookie_string(cookie_string):
+    """
+    Parse a raw cookie string into a RequestsCookieJar object.
+    """
+    jar = requests.cookies.RequestsCookieJar()
+    # Split the cookie string into individual cookies
+    for cookie in cookie_string.split("; "):
+        if "=" in cookie:
+            key, value = cookie.split("=", 1)
+            jar.set(key, value)
+    return jar
+
+cookie_string = 'bscookie='
+cookies = parse_cookie_string(cookie_string)
+
+api = Linkedin(cookies=cookies)
+```
+
+
+
+
+
 <div align="center">
 
 # LinkedIn API for Python
