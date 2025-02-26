@@ -50,6 +50,7 @@ class Linkedin(object):
     _MAX_REPEATED_REQUESTS = (
         200  # VERY conservative max requests count to avoid rate-limit
     )
+    THIS_CAN_BE_ADDED = 45
 
     def __init__(
         self,
